@@ -1,16 +1,4 @@
-import {
-  Avatar,
-  Box,
-  Button,
-  Checkbox,
-  Container,
-  CssBaseline,
-  FormControlLabel,
-  Grid,
-  Link,
-  TextField,
-  Typography,
-} from '@mui/material';
+import { Avatar, Box, Button, Container, CssBaseline, Grid, Link, TextField, Typography } from '@mui/material';
 import React from 'react';
 import { Copyright } from '../../utils/components/Copyright';
 
