@@ -1,4 +1,5 @@
 import { create } from 'zustand';
+import { simplePOST } from '../../helpers/apiHelper';
 
 export const useRegisterUserStore = create((set) => ({
   registerUserObject: {
@@ -15,5 +16,7 @@ export const useRegisterUserStore = create((set) => ({
         ...state,
       },
     })),
-  fetchRegisterUser: () => {},
+  fetchRegisterUser: async (data) => {
+    await simplePOST('api/auth/register/', data);
+  },
 }));
