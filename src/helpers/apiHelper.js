@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
 import axios from 'axios';
-import { getCurrentToken } from './utils';
 
 export const errorEntityValidationFormat = (message, model) =>
   ReactDOMServer.renderToString(

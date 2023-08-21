@@ -2,21 +2,21 @@ import { create } from 'zustand';
 import { simplePOST } from '../../helpers/apiHelper';
 
 export const useRegisterUserStore = create((set) => ({
-  registerUserObject: {
-    username: '',
-    first_name: '',
-    last_name: '',
-    email: '',
-    password: '',
-    roles: [],
-  },
-  registerUserAction: () =>
-    set((state) => ({
-      registerUserObject: {
-        ...state,
-      },
-    })),
+  data: null,
+  message: null,
+  loading: false,
+  error: null,
   fetchRegisterUser: async (data) => {
-    await simplePOST('api/auth/register/', data);
+    try {
+      if (data) {
+        set({
+          data,
+          loading: true,
+        });
+      }
+      const response = await simplePOST('/api/auth/register/', data);
+    } catch (error) {
+      set({ error });
+    }
   },
 }));
