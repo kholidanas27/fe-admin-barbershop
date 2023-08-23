@@ -24,7 +24,7 @@ export const RegisterPage = () => {
         <CssBaseline />
         <Box
           sx={{
-            marginTop: 10,
+            marginTop: 8,
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
@@ -63,14 +63,7 @@ export const RegisterPage = () => {
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
-                <TextField
-                  required
-                  fullWidth
-                  id="last_name"
-                  label="Last Name"
-                  name="last_name"
-                  autoComplete="family-name"
-                />
+                <TextField fullWidth id="last_name" label="Last Name" name="last_name" autoComplete="family-name" />
               </Grid>
               <Grid item xs={12}>
                 <TextField
