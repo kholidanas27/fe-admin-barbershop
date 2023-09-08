@@ -1,11 +1,13 @@
 /* eslint-disable arrow-body-style */
 import React from 'react';
 import { Avatar, Box, Button, Container, CssBaseline, Grid, Link, TextField, Typography } from '@mui/material';
+import { Navigate } from 'react-router-dom';
 import { Copyright } from '../../utils/components/Copyright';
 import { useRegisterUserStore } from '../../store/auth/registerStore';
 
 export const RegisterPage = () => {
   const fetchRegisterUser = useRegisterUserStore((state) => state?.fetchRegisterUser);
+  const navigateToLogin = useRegisterUserStore((state) => state.navigateToLogin);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -20,6 +22,7 @@ export const RegisterPage = () => {
   };
   return (
     <>
+      {navigateToLogin && <Navigate to="/login" replace />}
       <Container component="main" maxWidth="sm">
         <CssBaseline />
         <Box
